@@ -118,3 +118,52 @@ function showToast(msg) {
     toast.remove();
   }, 3200);
 }
+
+// Enhance photo: show loading then reveal the after image
+function enhancePhoto() {
+  const after = document.getElementById("afterPreview");
+  const btn = document.getElementById("enhanceBtn");
+  const overlay = document.getElementById("loading-overlay");
+  if (!after || !btn || !overlay) return;
+
+  // disable button to prevent repeated clicks
+  btn.disabled = true;
+  const origBtnText = btn.textContent;
+  btn.textContent = "Enhancing...";
+
+  // change overlay message temporarily
+  const overlayMsg = overlay.querySelector("p");
+  const origOverlayText = overlayMsg ? overlayMsg.textContent : "";
+  if (overlayMsg) overlayMsg.textContent = "Enhancing photo...";
+
+  // show overlay
+  overlay.style.display = "flex";
+
+  // simulate enhancement delay
+  setTimeout(() => {
+    // hide overlay, restore text
+    overlay.style.display = "none";
+    if (overlayMsg) overlayMsg.textContent = origOverlayText;
+
+    // reveal after image with animation
+    after.classList.remove("hidden");
+    // also reveal the label if present
+    const afterLabel = document.getElementById("afterLabel");
+    if (afterLabel) {
+      afterLabel.classList.remove("hidden");
+      // force reflow then add fade-in for label and image
+      void afterLabel.offsetWidth;
+      afterLabel.classList.add("fade-in");
+    }
+    // force reflow then add fade-in for image
+    void after.offsetWidth;
+    after.classList.add("fade-in");
+
+    // restore button state
+    btn.disabled = false;
+    btn.textContent = origBtnText;
+
+    // optional toast
+    showToast("Photo enhancement applied.");
+  }, 1500);
+}

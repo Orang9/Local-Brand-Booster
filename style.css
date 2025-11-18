@@ -146,7 +146,7 @@ button:hover {
 .card img {
   max-width: 100px;
   height: auto;
-  border-radius: 50%;
+  border-radius: 8px;
   margin-bottom: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -380,9 +380,9 @@ button:hover {
 }
 
 .influencer-card img {
-  border-radius: 50%;
-  width: 130px;
-  height: 130px;
+  border-radius: 8px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   margin-bottom: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
@@ -580,9 +580,9 @@ button:hover {
   margin-bottom: 12px;
 }
 .avatar-wrap img {
-  width: 220px;
-  height: 220px;
-  border-radius: 20px;
+  width: 320px;
+  height: 320px;
+  border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
@@ -916,4 +916,29 @@ button:hover {
   to {
     width: 60%;
   }
+}
+
+/* Preview images in the Design Helper: responsive and preserve aspect ratio */
+.preview-img {
+  display: block;
+  width: 100%;
+  max-width: 480px; /* increased visual size limit */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Ensure .card's generic img rule doesn't force a small size for preview images */
+.card .preview-img {
+  max-width: 480px;
+  width: 100%;
+}
+
+/* Utility: hidden + fade-in for preview reveal */
+.hidden {
+  display: none !important;
+}
+
+.fade-in {
+  animation: fadeIn 0.45s ease forwards;
 }

@@ -219,28 +219,25 @@
           <div style="text-align: center">
             <p><strong>Before</strong></p>
             <img
-              src="https://via.placeholder.com/250x250?text=Before"
+              src="assets/before-photo.jpg"
               alt="Before"
-              style="width: 250px; height: 250px; border-radius: 10px"
+              class="preview-img"
             />
           </div>
 
           <div style="text-align: center">
-            <p><strong>After</strong></p>
+            <p id="afterLabel" class="hidden"><strong>After</strong></p>
             <img
-              src="https://via.placeholder.com/250x250?text=After"
+              src="assets/after-photo.jpg"
               alt="After"
-              style="
-                width: 250px;
-                height: 250px;
-                border-radius: 10px;
-                filter: brightness(110%) contrast(110%);
-              "
+              id="afterPreview"
+              class="preview-img hidden"
+              style="filter: brightness(110%) contrast(110%);"
             />
           </div>
         </div>
 
-        <button style="margin-top: 20px">Enhance Photo</button>
+        <button id="enhanceBtn" style="margin-top: 20px" onclick="enhancePhoto()">Enhance Photo</button>
       </div>
 
       <div class="card" style="text-align: center">
@@ -264,10 +261,7 @@
         <div class="influencer-card">
           <div class="glow"></div>
 
-          <img
-            src="https://via.placeholder.com/130x130?text=Influencer"
-            alt="Profile"
-          />
+          <img src="assets/Shine-profile.jpg" alt="Profile" />
 
           <h3 class="name">Shine</h3>
 
@@ -307,7 +301,7 @@
       <div class="profile-hero card">
         <div class="hero-left">
           <div class="avatar-wrap">
-            <img src="https://via.placeholder.com/220x220?text=Influencer" />
+            <img src="assets/Shine-profile.jpg" />
             <span class="badge">Micro-Influencer</span>
           </div>
           <h2 class="inf-name">Shine Influencer</h2>
@@ -360,23 +354,23 @@
         <h3 style="margin-top: 0">Portfolio Preview</h3>
         <div class="gallery" id="gallery">
           <div class="thumb">
-            <img src="https://via.placeholder.com/220x140?text=Post+1" alt="" />
+            <img src="assets/mini-review.jpg" alt="" />
             <p>Mini review</p>
           </div>
           <div class="thumb">
-            <img src="https://via.placeholder.com/220x140?text=Post+2" alt="" />
+            <img src="assets/unboxing.jpeg" alt="" />
             <p>Unboxing</p>
           </div>
           <div class="thumb">
-            <img src="https://via.placeholder.com/220x140?text=Post+3" alt="" />
+            <img src="assets/gameplay-clip.jpg" alt="" />
             <p>Gameplay clip</p>
           </div>
           <div class="thumb">
-            <img src="https://via.placeholder.com/220x140?text=Post+4" alt="" />
+            <img src="assets/photo-reel.jpg" alt="" />
             <p>Photo reel</p>
           </div>
           <div class="thumb">
-            <img src="https://via.placeholder.com/220x140?text=Post+5" alt="" />
+            <img src="assets/story-highlight.jpg" alt="" />
             <p>Story highlight</p>
           </div>
         </div>
@@ -436,7 +430,6 @@
           <h2>Collaboration Dashboard</h2>
           <p>Manage your project progress with the influencer</p>
         </div>
-        <img src="https://i.pravatar.cc/150" class="avatar" />
         <span class="status-badge">Active</span>
       </div>
 
